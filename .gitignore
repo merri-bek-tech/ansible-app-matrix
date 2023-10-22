@@ -1,3 +1,4 @@
+/inventory/host_vars/*/secret_vars.yml
 /inventory/hosts
 !/inventory/.gitkeep
 !/inventory/host_vars/.gitkeep
