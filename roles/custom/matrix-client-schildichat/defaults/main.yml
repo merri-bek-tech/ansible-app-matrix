@@ -6,7 +6,7 @@ matrix_client_schildichat_enabled: true
 matrix_client_schildichat_container_image_self_build: false
 
 # renovate: datasource=docker depName=registry.gitlab.com/etke.cc/schildichat-web
-matrix_client_schildichat_version: v1.11.30-sc.2
+matrix_client_schildichat_version: v1.11.36-sc.3
 matrix_client_schildichat_docker_image: "{{ matrix_client_schildichat_docker_image_name_prefix }}etke.cc/schildichat-web:{{ matrix_client_schildichat_version }}"
 matrix_client_schildichat_docker_image_name_prefix: "{{ 'localhost/' if matrix_client_schildichat_container_image_self_build else 'registry.gitlab.com/' }}"
 matrix_client_schildichat_docker_image_force_pull: "{{ matrix_client_schildichat_docker_image.endswith(':latest') }}"
@@ -15,7 +15,7 @@ matrix_client_schildichat_data_path: "{{ matrix_base_data_path }}/client-schildi
 matrix_client_schildichat_docker_src_files_path: "{{ matrix_client_schildichat_data_path }}/docker-src"
 
 # The base container network
-matrix_client_schildichat_container_network: matrix-client-schildichat
+matrix_client_schildichat_container_network: ''
 
 # A list of additional container networks that the container would be connected to.
 # The role does not create these networks, so make sure they already exist.
@@ -124,14 +124,9 @@ matrix_client_schildichat_floc_optout_enabled: true
 matrix_client_schildichat_hsts_preload_enabled: false
 
 # The hostname at which schildichat is served.
-# Only works with with Traefik reverse-proxying.
-# For matrix-nginx-proxy, `matrix_server_fqn_schildichat` is used and this variable has no effect.
 matrix_client_schildichat_hostname: "{{ matrix_server_fqn_schildichat }}"
 
 # The path at which schildichat is exposed.
-# When matrix-nginx-proxy is used, setting this to values other than `/` will cause configuration mismatches and trouble.
-#
-# If Traefik is used, the hostname is also configurable - see `matrix_client_schildichat_container_labels_traefik_hostname`.
 # This value must either be `/` or not end with a slash (e.g. `/schildichat`).
 matrix_client_schildichat_path_prefix: /
 
@@ -150,7 +145,6 @@ matrix_client_schildichat_bug_report_endpoint_url: "https://element.io/bugreport
 matrix_client_schildichat_show_lab_settings: true  # noqa var-naming
 # schildichat public room directory server(s)
 matrix_client_schildichat_room_directory_servers: ['matrix.org']
-matrix_client_schildichat_welcome_user_id: ~
 # Branding of schildichat
 matrix_client_schildichat_brand: "schildichat"
 

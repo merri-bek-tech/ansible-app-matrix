@@ -79,6 +79,12 @@
       pull: true
   when: "matrix_bot_postmoogle_container_image_self_build | bool"
 
+- name: Ensure postmoogle container network is created
+  community.general.docker_network:
+    enable_ipv6: "{{ devture_systemd_docker_base_ipv6_enabled }}"
+    name: "{{ matrix_bot_postmoogle_container_network }}"
+    driver: bridge
+
 - name: Ensure matrix-bot-postmoogle.service installed
   ansible.builtin.template:
     src: "{{ role_path }}/templates/systemd/matrix-bot-postmoogle.service.j2"

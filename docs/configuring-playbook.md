@@ -8,7 +8,7 @@ To configure the playbook, you need to have done the following things:
 
 You can then follow these steps inside the playbook directory:
 
-1. create a directory to hold your configuration (`mkdir inventory/host_vars/matrix.<your-domain>`)
+1. create a directory to hold your configuration (`mkdir -p inventory/host_vars/matrix.<your-domain>`)
 
 1. copy the sample configuration file (`cp examples/vars.yml inventory/host_vars/matrix.<your-domain>/vars.yml`)
 
@@ -65,8 +65,6 @@ When you're done with all the configuration you'd like to do, continue with [Ins
 
 - [Configure the Traefik reverse-proxy](configuring-playbook-traefik.md) (optional, advanced)
 
-- (Deprecated) [Configure the Nginx reverse-proxy](configuring-playbook-nginx.md) (optional, advanced)
-
 - [Using your own webserver, instead of this playbook's default reverse-proxy](configuring-playbook-own-webserver.md) (optional, advanced)
 
 - [Adjusting TURN server configuration](configuring-playbook-turn.md) (optional, advanced)
@@ -107,7 +105,9 @@ When you're done with all the configuration you'd like to do, continue with [Ins
 
 - [Setting up Matrix Corporal](configuring-playbook-matrix-corporal.md) (optional, advanced)
 
-- [Matrix User Verification Service](configuring-playbook-user-verification-service.md) (optional, advanced)
+- [Setting up Matrix User Verification Service](configuring-playbook-user-verification-service.md) (optional, advanced)
+
+- [Setting up Pantalaimon (E2EE aware proxy daemon)](configuring-playbook-pantalaimon.md) (optional, advanced)
 
 
 ### Bridging other networks
@@ -122,13 +122,17 @@ When you're done with all the configuration you'd like to do, continue with [Ins
 
 - [Setting up Mautrix Whatsapp bridging](configuring-playbook-bridge-mautrix-whatsapp.md) (optional)
 
-- [Setting up Mautrix Facebook bridging](configuring-playbook-bridge-mautrix-facebook.md) (optional)
+- [Setting up Instagram bridging via Mautrix Meta](configuring-playbook-bridge-mautrix-meta-instagram.md) (optional)
+
+- [Setting up Messenger bridging via Mautrix Meta](configuring-playbook-bridge-mautrix-meta-messenger.md) (optional)
+
+- ~~[Setting up Mautrix Facebook bridging](configuring-playbook-bridge-mautrix-facebook.md)~~ - consider bridging to Facebook/Messenger using the new [mautrix-meta-messenger](./configuring-playbook-bridge-mautrix-meta-messenger.md) bridge (optional)
 
 - [Setting up Mautrix Hangouts bridging](configuring-playbook-bridge-mautrix-hangouts.md) (optional)
 
 - [Setting up Mautrix Google Chat bridging](configuring-playbook-bridge-mautrix-googlechat.md) (optional)
 
-- [Setting up Mautrix Instagram bridging](configuring-playbook-bridge-mautrix-instagram.md) (optional)
+- ~~[Setting up Mautrix Instagram bridging](configuring-playbook-bridge-mautrix-instagram.md)~~ - consider bridging to Instagram using the new [mautrix-meta-instagram](./configuring-playbook-bridge-mautrix-meta-instagram.md) bridge (optional)
 
 - [Setting up Mautrix Twitter bridging](configuring-playbook-bridge-mautrix-twitter.md) (optional)
 
@@ -192,6 +196,8 @@ When you're done with all the configuration you'd like to do, continue with [Ins
 - [Setting up Mjolnir](configuring-playbook-bot-mjolnir.md) - a moderation tool/bot (optional)
 
 - [Setting up Draupnir](configuring-playbook-bot-draupnir.md) - a moderation tool/bot, forked from Mjolnir and maintained by its former leader developer (optional)
+
+- [Setting up Draupnir for all](configuring-playbook-appservice-draupnir-for-all.md) - like the [Draupnir bot](configuring-playbook-bot-draupnir.md) mentioned above, but running in appservice mode and supporting multiple instances (optional)
 
 - [Setting up Buscarron](configuring-playbook-bot-buscarron.md) - a bot you can use to send any form (HTTP POST, HTML) to a (encrypted) Matrix room (optional)
 

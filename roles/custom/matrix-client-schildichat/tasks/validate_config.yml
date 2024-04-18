@@ -1,12 +1,22 @@
 ---
 
+- name: (Deprecation) Catch and report renamed Schildichat settings
+  ansible.builtin.fail:
+    msg: >-
+      Your configuration contains a variable, which now has a different name.
+      Please change your configuration to rename the variable (`{{ item.old }}` -> `{{ item.new }}`).
+  when: "item.old in vars"
+  with_items:
+    - {'old': 'matrix_client_schildichat_welcome_user_id', 'new': '<removed>'}
+
 - name: Fail if required schildichat settings not defined
   ansible.builtin.fail:
     msg: >
       You need to define a required configuration setting (`{{ item }}`) for using schildichat.
   when: "vars[item] == ''"
   with_items:
-    - "matrix_client_schildichat_default_hs_url"
+    - matrix_client_schildichat_default_hs_url
+    - matrix_client_schildichat_container_network
 
 - name: Fail if schildichat location sharing enabled, but no tile server defined
   ansible.builtin.fail:

@@ -66,6 +66,12 @@
   with_items:
     - labels
 
+- name: Ensure Matrix Corporal container network is created
+  community.general.docker_network:
+    enable_ipv6: "{{ devture_systemd_docker_base_ipv6_enabled }}"
+    name: "{{ matrix_corporal_container_network }}"
+    driver: bridge
+
 - name: Ensure matrix-corporal.service installed
   ansible.builtin.template:
     src: "{{ role_path }}/templates/systemd/matrix-corporal.service.j2"
