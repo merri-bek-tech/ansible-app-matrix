@@ -12,7 +12,7 @@
 matrix_domain: 'labs.merri-bek.chat'
 
 # This server will serve the base domain, including the wellknown file. Disable this if we want to have the base domain served by a seperate server.
-matrix_nginx_proxy_base_domain_serving_enabled: true
+matrix_static_files_container_labels_base_domain_enabled: true
 
 # The Matrix homeserver software to install.
 # See:
