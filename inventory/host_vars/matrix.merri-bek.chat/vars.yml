@@ -68,7 +68,7 @@ matrix_synapse_admin_enabled: true
 matrix_sliding_sync_enabled: true
 
 #### REGISTRATION ####
-matrix_bot_matrix_registration_bot_enabled: true
-matrix_bot_matrix_registration_bot_bot_password: '{{ registration_bot_password }}'
+# matrix_bot_matrix_registration_bot_enabled: true
+# matrix_bot_matrix_registration_bot_bot_password: '{{ registration_bot_password }}'
 matrix_synapse_enable_registration: true
 matrix_synapse_registration_requires_token: true
