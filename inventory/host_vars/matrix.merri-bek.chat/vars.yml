@@ -65,7 +65,6 @@ matrix_client_element_enabled: true
 #### SYNAPSE ####
 
 matrix_synapse_admin_enabled: true
-matrix_sliding_sync_enabled: true
 
 #### REGISTRATION ####
 # matrix_bot_matrix_registration_bot_enabled: true
