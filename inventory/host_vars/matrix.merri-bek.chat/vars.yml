@@ -11,6 +11,9 @@
 # Example value: example.com
 matrix_domain: 'merri-bek.chat'
 
+matrix_playbook_migration_validated_version: v2026.05.18.0
+
+
 # This server will serve the base domain, including the wellknown file. Disable this if we want to have the base domain served by a seperate server.
 matrix_static_files_container_labels_base_domain_enabled: true
 
@@ -64,7 +67,7 @@ matrix_client_element_enabled: true
 
 #### SYNAPSE ####
 
-matrix_synapse_admin_enabled: true
+matrix_ketesa_enabled: true
 
 #### REGISTRATION ####
 # matrix_bot_matrix_registration_bot_enabled: true
